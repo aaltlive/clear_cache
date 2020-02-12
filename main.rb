@@ -1,14 +1,15 @@
 require 'json'
 require 'net/http'
 require 'redis'
+require 'sinatra'
 
 def redis()
   redis = Redis.new(host: "localhost")
 
   puts( redis.set("a", 1) )
   puts( redis.get("a") )
-end
 
+end
 
 def vk_clear_cash(url)
   method_name = 'pages.clearCache'
@@ -23,21 +24,19 @@ def vk_clear_cash(url)
 
   response = jresp["response"]
   if response
-    puts(response)
+    return response
   else
     error = jresp["error"]
 
-    puts(error["error_code"])
-    puts(error["error_msg"])
+    return error["error_code"]
   end
+
 end
 
-def main()
-  url = 'https://web.telegram.org/'
-
-  redis()
+get '/posts' do
+  # matches "GET /posts?url="
+  url = params['url']
 
   vk_clear_cash(url)
-end
 
-main()
+end
