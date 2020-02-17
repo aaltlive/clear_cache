@@ -19,8 +19,6 @@ def do_request()
 
 end
 
-do_request()
-
 # URI::InvalidURIError at /clearcache
 # URI must be ascii only "https://api.vk.com/method/pages.clearCache?url=aaasdad\u0432\u0444\u044B\u0432
 # 
