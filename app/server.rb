@@ -1,6 +1,6 @@
 require 'redis'
 require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader' # удалить!
 
 REDIS = Redis.new
 
@@ -12,4 +12,3 @@ get '/clearcache' do
   "#{REDIS.lrange('all_urls', 0, 999)}"
 
 end
-

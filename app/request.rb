@@ -13,10 +13,16 @@ def do_request()
   end
 
   for i in urls.uniq
+    # REDIS.del('all_urls') # удалить ссылки, если получены ошибки
     # vk_clear(i) # удалить это, нужен чтобы чистить "застрявшие" ссылки
     REDIS.rpush('all_urls', i) if not vk_clear(i)
   end
 
+end
+
+while 1
+  do_request()
+  sleep(5)
 end
 
 # URI::InvalidURIError at /clearcache
