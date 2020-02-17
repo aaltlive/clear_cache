@@ -14,7 +14,7 @@ def do_request()
 
   for i in urls.uniq
     # vk_clear(i) # удалить это, нужен чтобы чистить "застрявшие" ссылки
-    # REDIS.rpush('all_urls', i) if not vk_clear(i)
+    REDIS.rpush('all_urls', i) if not vk_clear(i)
   end
 
 end
