@@ -12,16 +12,18 @@ def do_request()
     end
   end
 
-  for i in urls.uniq
+  for u in urls.uniq
     begin
-      vk_clear(i)
+      vk_clear_cash(u)
     rescue
     end
   end
 
 end
 
-while 1
-  do_request()
-  sleep(5)
-end
+do_request() # developer mode
+
+# while 1
+#   do_request()
+#   sleep(5)
+# end

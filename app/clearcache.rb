@@ -3,7 +3,7 @@ require 'net/http'
 
 def vk_clear(url)
   method_name = 'pages.clearCache'
-  access_token = 'f6326aeff6326aeff6326aef6bf65dc875ff632f6326aefa87022de6e220f3855a3bcd8'
+  access_token = 'f6326aeff6326aeff626aef6bf65dc875ff632f6326aefa87022de6e220f3855a3bcd8'
   v = '5.103'
 
   parameters = 'url=' + url
