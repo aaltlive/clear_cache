@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+set :output, "/log/cron_log.log"
+
+every 5.seconds do
+  rake
+end
