@@ -1,7 +1,7 @@
 require 'json'
 require 'net/http'
 
-def vk_clear(url)
+def vk(url)
   method_name = 'pages.clearCache'
   access_token = 'f6326aeff6326aeff626aef6bf65dc875ff632f6326aefa87022de6e220f3855a3bcd8'
   v = '5.103'
@@ -14,4 +14,13 @@ def vk_clear(url)
   
   return jresp["response"]
 
+end
+
+def telegram(url)
+end
+
+def twitter(url)
+end
+
+def facebook(url)
 end

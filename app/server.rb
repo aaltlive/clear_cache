@@ -11,3 +11,9 @@ get '/clearcache' do
   "#{REDIS.lrange('all_urls', 0, 999)}" # developer mode
 
 end
+
+post '/clearcache' do
+  url = params['url']
+  "#{REDIS.rpush('all_urls', url)}"
+
+end
