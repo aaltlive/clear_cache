@@ -1,9 +1,38 @@
+GIT
+  remote: git://github.com/ssut/telegram-rb.git
+  revision: 2c6b1843a0c9c4e8d5cade18f014ee1e34d4ebd2
+  specs:
+    telegram-rb (0.1.0)
+      em-http-request
+      em-synchrony
+      eventmachine
+      fastimage
+      oj
+
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    cookiejar (0.3.3)
+    em-http-request (1.1.5)
+      addressable (>= 2.3.4)
+      cookiejar (!= 0.3.1)
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.2)
+      eventmachine (>= 1.0.0.beta.4)
+    em-synchrony (1.0.6)
+      eventmachine (>= 1.0.0.beta.1)
+    eventmachine (1.2.7)
+    fastimage (2.1.7)
+    http_parser.rb (0.6.0)
     json (2.3.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    oj (3.10.2)
+    public_suffix (4.0.3)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -15,16 +44,20 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
+    telegram (0.0.1)
     tilt (2.0.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  eventmachine!
   json!
   rake!
   redis!
   sinatra!
+  telegram!
+  telegram-rb!
 
 BUNDLED WITH
    1.17.2

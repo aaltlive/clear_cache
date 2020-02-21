@@ -20,9 +20,9 @@ def request()
 
 end
 
-request() # developer mode
-
 # while true
 #   request()
 #   sleep(5)
 # end
+
+request() # developer mode
