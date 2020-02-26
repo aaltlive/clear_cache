@@ -8,10 +8,11 @@ def request()
     if u=REDIS.lpop('all_urls') then urls.append(u) else break end
   end
 
+  telegram(urls)
+
   for u in urls.uniq
     begin
-      vk(u)
-      # telegram(u)
+      # vk(u)
       # twitter(u)
       # facebook(u)
     rescue
@@ -25,4 +26,4 @@ end
 #   sleep(5)
 # end
 
-request() # developer mode
+request() # developer_mode

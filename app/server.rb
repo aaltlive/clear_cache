@@ -1,13 +1,13 @@
 require 'redis'
 require 'sinatra'
-require 'sinatra/reloader' # developer mode
+require 'sinatra/reloader' # developer_mode
 
 REDIS = Redis.new
 
 get '/clearcache' do
   REDIS.rpush('all_urls', params['url'])
 
-  "#{REDIS.lrange('all_urls', 0, 999)}" # developer mode
+  "#{REDIS.lrange('all_urls', 0, 999)}" # developer_mode
 
 end
 
