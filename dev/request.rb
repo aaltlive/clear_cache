@@ -1,5 +1,6 @@
-require_relative 'server' # for redis
-require_relative 'clearcache' # for clear function
+require_relative 'server'
+require_relative 'tg_server'
+require_relative 'clearcache'
 
 def request()
   urls = []
@@ -8,9 +9,10 @@ def request()
     if u=REDIS.lpop('all_urls') then urls.append(u) else break end
   end
 
-  telegram(urls)
+  mes = ""
 
   for u in urls.uniq
+    mes += u + "\n"
     begin
       # vk(u)
       # twitter(u)
@@ -18,6 +20,8 @@ def request()
     rescue
     end
   end
+
+  
 
 end
 

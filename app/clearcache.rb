@@ -17,18 +17,9 @@ def vk(url)
   if response
     return response
   else
-    puts(jresp["error"]["error_msg"])
+    return jresp["error"]["error_msg"]
   end
 
-end
-
-def telegram(urls)
-  message = ""
-  for u in urls
-    message += u + "\n"
-  end
-
-  puts message
 end
 
 def twitter(url)
