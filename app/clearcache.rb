@@ -22,4 +22,9 @@ def vk(url)
 end
 
 def facebook(url)
+  access_token = ''
+  uri = URI('http://graph.facebook.com/')
+  res = Net::HTTP.post_form(uri, 'id' => url, 'scrape' => true)
+  
+  return res.body
 end
