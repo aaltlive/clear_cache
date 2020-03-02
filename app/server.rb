@@ -8,10 +8,8 @@ get '/clearcache' do
   REDIS.rpush('all_urls', params['url'])
 
   "#{REDIS.lrange('all_urls', 0, 999)}" # developer_mode
-
 end
 
 post '/clearcache' do
   "#{REDIS.rpush('all_urls', params['url'])}"
-
 end

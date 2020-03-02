@@ -19,10 +19,6 @@ def vk(url)
   else
     return jresp["error"]["error_msg"]
   end
-
-end
-
-def twitter(url)
 end
 
 def facebook(url)

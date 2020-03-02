@@ -16,7 +16,6 @@ def request()
     mes += u + " "
     begin
       print("VK:", vk(u), ":", u, "\n")
-      # twitter(u)
       # facebook(u)
     rescue
     end
@@ -51,13 +50,10 @@ EM.run do
           output("New Round")
           telegram.msg('Webpage_Bot', 'New Round!')
         end
-      
       end
       
       output("WAITING 5 sec")
       sleep(5)
-    
     end
   end
-
 end
