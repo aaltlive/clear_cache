@@ -15,12 +15,12 @@ url = [
   'https://ru.wikipedia.org/',
 ]
 
-# uri = URI('http://localhost:4567/clearcache')
-# res = Net::HTTP.post_form(uri, 'url[]' => url)
-# puts res.body
-
-id = 'https://vk.com/'
-
-uri = URI('http://graph.facebook.com/')
-res = Net::HTTP.post_form(uri, 'id' => id, 'scrape' => true)
+uri = URI('http://localhost:4567/clearcache')
+res = Net::HTTP.post_form(uri, 'url[]' => url)
 puts res.body
+
+# id = 'https://vk.com/'
+
+# uri = URI('http://graph.facebook.com/')
+# res = Net::HTTP.post_form(uri, 'id' => id, 'scrape' => true)
+# puts res.body

@@ -1,15 +1,16 @@
 require 'redis'
 require 'sinatra'
-require 'sinatra/reloader' # developer_mode
+require 'sinatra/contrib'
+# require 'sinatra/reloader'
 
 REDIS = Redis.new
 
-get '/clearcache' do
+route :get, :post, '/clearcache' do
   REDIS.rpush('all_urls', params['url'])
+  json('response' => 1)
 
-  "#{REDIS.lrange('all_urls', 0, 999)}" # developer_mode
-end
+  # dev_mode
+  json( REDIS.lrange('all_urls', 0, 999) )
+  #
 
-post '/clearcache' do
-  "#{REDIS.rpush('all_urls', params['url'])}"
 end
