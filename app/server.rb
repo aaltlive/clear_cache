@@ -10,7 +10,7 @@ route :get, :post, '/clearcache' do
   json('response' => 1)
 
   # dev_mode
+  # REDIS.del("all_urls")
   json( REDIS.lrange('all_urls', 0, 999) )
   #
-
 end
