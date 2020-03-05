@@ -1,7 +1,7 @@
 require 'redis'
 require 'sinatra'
 require 'sinatra/contrib'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 
 REDIS = Redis.new
 

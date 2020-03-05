@@ -14,11 +14,11 @@ def request()
 
   for u in urls.uniq
     mes += u + " "
-    begin
-      print("VK:", vk(u), ":", u, "\n")
+    # begin
+    print("VK:", vk(u), ":", u, "\n")
       # facebook(u)
-    rescue
-    end
+    # rescue
+    # end
   end
 
   return mes
