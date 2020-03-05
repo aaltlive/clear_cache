@@ -15,29 +15,9 @@ def vk(url)
   
   response = jresp["response"]
 
-  errors = [
-    # Произошла неизвестная ошибка.
-    1,
-    # Слишком много запросов в секунду.
-    6,
-    # Слишком много однотипных действий.
-    9,
-    # Произошла внутренняя ошибка сервера.
-    10
-    # Требуется ввод кода с картинки (Captcha).
-    # 14,
-    # Достигнут количественный лимит на вызов метода
-    # 29,
-    # Recaptcha needed
-    # 3300
-  ]
-
   if response
     return response
   else
-    if errors.include? jresp["error"]["error_code"]
-      REDIS.rpush('all_urls', url)
-    end
     return jresp["error"]["error_msg"]
   end
 end
