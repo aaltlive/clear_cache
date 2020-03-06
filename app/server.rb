@@ -3,6 +3,8 @@ require 'sinatra'
 require 'sinatra/contrib'
 require 'sinatra/reloader'
 
+set :bind, '172.22.1.76'
+
 REDIS = Redis.new
 
 route :get, :post, '/clearcache' do
