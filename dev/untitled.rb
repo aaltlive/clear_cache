@@ -51,3 +51,10 @@
 + Сервер tg: rake tg_server.py        (подлючается к telegram-cli, позволяя писать сообщения боту. Делает все запросы сам через эвент отправки сообщения)
 ! # [отказ в пользу сервера tg] Цикл request: rake request          (делает каждый 5 секунд запросы)
 # 
+
+
+
+# dev_mode
+# REDIS.del("all_urls")
+json( REDIS.lrange('all_urls', 0, 999) )
+# 
