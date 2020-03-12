@@ -2,6 +2,6 @@ task :server do
   ruby "app/server.rb"
 end
 
-task :tg_server do
-  ruby "app/tg_server.rb"
+task :request do
+  ruby "app/request.rb"
 end
