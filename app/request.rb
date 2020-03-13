@@ -69,8 +69,8 @@ end
 
 EM.run do
   telegram = Telegram::Client.new do |cfg|
-    cfg.daemon = './.telegram-cli/telegram-cli'
-    cfg.key = './.telegram-cli/tg-server.pub'
+    cfg.daemon = 'dev/tg/bin/telegram-cli'
+    cfg.key = 'dev/tg/tg-server.pub'
   end
 
   telegram.connect do
