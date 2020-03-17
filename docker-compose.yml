@@ -1,9 +1,9 @@
 version: "3.7"
 
 services:
-  app:
+  server:
     build: .
+    command: "rake server"
     ports:
       - "4567:4567"
-      - "6000:6379"
-    command: "redis-cli"
+    network_mode: host

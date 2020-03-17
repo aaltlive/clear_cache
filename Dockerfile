@@ -18,4 +18,3 @@ COPY tg-rb tg-rb/
 COPY app app/
 
 EXPOSE 4567
-EXPOSE 6379
