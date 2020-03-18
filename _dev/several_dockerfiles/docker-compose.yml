@@ -6,19 +6,22 @@ services:
     ports:
      - "6000:6379"
 
-  setup:
-    build: .
-
   server:
-    image: clear_cache_setup
+    build:
+      context: .
+      dockerfile: Docker_server
+      # args:
+      #   buildno: 1
     ports:
       - "4567:4567"
     depends_on:
-      - setup
+      - redis
     command: "rake server"
 
   rloop:
-    image: clear_cache_setup
+    build:
+      context: .
+      dockerfile: Docker_rloop
     depends_on:
-      - setup
+      - server
     command: "rake rloop"

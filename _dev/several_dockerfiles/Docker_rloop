@@ -7,13 +7,11 @@ RUN apt-get update && apt-get upgrade -y && \
 
 COPY .telegram-cli root/.telegram-cli/
 
-WORKDIR root/w/clear_cash_ruby
+WORKDIR clear_cache/
 
 COPY Gemfile Rakefile ./
 
 RUN gem install bundler && bundle install
 
 COPY tg-rb tg-rb/
-COPY app app/
-
-EXPOSE 4567
+COPY app/rloop.rb app/

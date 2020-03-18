@@ -1,14 +1,10 @@
 require 'json'
+require 'redis'
 require 'logger'
 require 'bundler' 
 require 'net/http'
 
-#require_relative 'server'
-
-#
-require 'redis'
 REDIS = Redis.new(host: "redis")
-#
 
 Bundler.require(:default)
 
@@ -81,7 +77,7 @@ EM.run do
   telegram.connect do
 
     EventMachine::add_periodic_timer(5) do
-      $logger.info("New Round")
+      $logger.error("New Round")
 
       urls = get_urls()
 
