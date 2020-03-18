@@ -1,1 +1,1 @@
-# clear_cash_ruby, 11.02.20
+# clear_cache, 11.02.20
