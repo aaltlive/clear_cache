@@ -3,7 +3,12 @@ require 'logger'
 require 'bundler' 
 require 'net/http'
 
-require_relative 'server'
+#require_relative 'server'
+
+#
+require 'redis'
+REDIS = Redis.new
+#
 
 Bundler.require(:default)
 

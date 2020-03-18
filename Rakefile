@@ -2,6 +2,6 @@ task :server do
   ruby "app/server.rb"
 end
 
-task :request do
-  ruby "app/request.rb"
+task :rloop do
+  ruby "app/rloop.rb"
 end
