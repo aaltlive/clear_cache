@@ -1,7 +1,6 @@
 require 'redis'
 require 'sinatra'
 require 'sinatra/contrib'
-# require 'sinatra/reloader'
 
 REDIS = Redis.new(host: "redis")
 
@@ -10,7 +9,7 @@ set :bind, '0.0.0.0'
 route :get, :post, '/clearcache' do
   url = params['url']
   if url and url != ""
-    REDIS.rpush('all_urls', params['url'])
+    REDIS.rpush('all_urls', url)
     json("response" => 1)
   else
     json("error" => {
