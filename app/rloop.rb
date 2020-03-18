@@ -7,7 +7,7 @@ require 'net/http'
 
 #
 require 'redis'
-REDIS = Redis.new
+REDIS = Redis.new(host: "redis")
 #
 
 Bundler.require(:default)
@@ -81,7 +81,7 @@ EM.run do
   telegram.connect do
 
     EventMachine::add_periodic_timer(5) do
-      $logger.debug("New Round")
+      $logger.info("New Round")
 
       urls = get_urls()
 
