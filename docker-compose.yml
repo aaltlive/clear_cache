@@ -5,6 +5,7 @@ services:
     image: "redis"
     ports:
      - "6000:6379"
+    restart: on-failure
 
   setup:
     build:

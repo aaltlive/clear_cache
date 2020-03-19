@@ -15,7 +15,7 @@ url = [
   'https://ru.wikipedia.org/',
 ]
 
-uri = URI('http://172.22.1.76:4567/clearcache')
+uri = URI('http://127.0.0.1:4567/clearcache')
 res = Net::HTTP.post_form(uri, 'url[]' => url)
 puts res.body
 

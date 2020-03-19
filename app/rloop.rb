@@ -77,7 +77,7 @@ EM.run do
   telegram.connect do
 
     EventMachine::add_periodic_timer(5) do
-      $logger.error("New Round")
+      $logger.debug("New Round")
 
       urls = get_urls()
 
