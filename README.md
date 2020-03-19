@@ -39,7 +39,7 @@ mv ${HOME}/.telegram-cli ./telegram-cli && rm -rf tg/
 touch tokens.env
 ```
 ```
-VK_ACCESS_TOKEN="<your_vk_access_token>"
+VK_ACCESS_TOKEN=<your_vk_access_token>
 ```
 
 ## Run docker
