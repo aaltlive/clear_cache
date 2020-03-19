@@ -10,7 +10,7 @@ route :get, :post, '/clearcache' do
   url = params['url']
   if url and url != ""
     REDIS.rpush('all_urls', url)
-    json("response" => ARGV[0])
+    json("response" => 1)
   else
     json("error" => {
       "error_code" => 400,

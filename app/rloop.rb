@@ -24,7 +24,7 @@ end
 
 def vk(url)
   method_name = 'pages.clearCache'
-  access_token = ARGV[0]
+  access_token = ENV["VK_ACCESS_TOKEN"]
   v = '5.103'
 
   parameters = 'url=' + url

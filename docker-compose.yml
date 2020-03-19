@@ -11,15 +11,19 @@ services:
       context: .
 
   server:
-    image: clear_cache_setup
+    image: "clear_cache_setup"
     ports:
       - "4567:4567"
     depends_on:
-      - setup
+      - "setup"
+    restart: on-failure
     command: "rake server"
 
   rloop:
-    image: clear_cache_setup
+    image: "clear_cache_setup"
     depends_on:
-      - setup
+      - "setup"
+    env_file:
+      - ./tokens.env
+    restart: on-failure
     command: "rake rloop"
