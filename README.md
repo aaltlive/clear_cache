@@ -7,30 +7,18 @@ git clone https://github.com/aaltlive/clear_cache.git && cd clear_cache
 https://github.com/vysheng/tg
 
 #### Ubuntu
-git clone --recursive https://github.com/vysheng/tg.git && cd tg
+git clone --recursive https://github.com/vysheng/tg.git && cd tg <br>
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson-dev libpython-dev make <br>
+./configure <br>
+make <br>
 
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson-dev libpython-dev make
-
-./configure
-
-make
-
-- If get a compile error:
-
+**If get a compile error:** <br>
+https://github.com/wbeyda/tg/commit/4336ff8d04268dab7d0e6888e77bec54f9a16e18 <br>
 sudo apt-get install libssl1.0-dev and zlib1g-dev
-(https://github.com/wbeyda/tg/commit/4336ff8d04268dab7d0e6888e77bec54f9a16e18)
-- and again:
 
-./configure
-
-make
-
-- After compile:
-
+**After compile:** <br>
 bin/telegram-cli -k tg-server.pub
 
-- Enter the number and received code and then for check type:
-
-contact_list
-
+**Enter the number and received code and then for check type:**<br>
+contact_list <br>
 exit
