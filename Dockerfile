@@ -13,7 +13,7 @@ COPY Gemfile Rakefile ./
 
 RUN gem install bundler && bundle install
 
-COPY tg-rb tg-rb/
+COPY tg_rb tg_rb/
 COPY app app/
 
 EXPOSE 4567

@@ -1,4 +1,4 @@
 tg/
-tg-rb/
+tg_rb/
 .telegram-cli/
 *.env

@@ -22,3 +22,17 @@ bin/telegram-cli -k tg-server.pub
 **Enter the number and received code and then for check type:**<br>
 contact_list <br>
 exit
+
+### Telegram-cli files
+cd .. && mkdir tg_rb <br>
+mv tg/bin/telegram-cli tg_rb/telegram-cli && mv tg/tg-server.pub tg_rb/tg-server.pub <br>
+mv ${HOME}/.telegram-cli ./telegram-cli && rm -rf tg/ <br>
+
+### ENV
+touch tokens.env <br>
+```
+VK_ACCESS_TOKEN="<your_vk_access_token>"
+```
+
+## Run docker
+docker-compose build && docker-compose up
