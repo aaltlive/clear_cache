@@ -6,11 +6,11 @@ require 'logger'
 require 'bundler'
 require 'net/http'
 
+Bundler.require(:default)
 REDIS = Redis.new(host: 'redis')
 
-Bundler.require(:default)
-
-STDOUT.sync
+STDOUT.sync = true
+STDERR.sync = true
 $logger = Logger.new(STDOUT)
 $logger.level = ENV.fetch('LOG_LEVEL', 'debug')
 
@@ -65,7 +65,7 @@ def process_messages(telegram, urls)
       $logger.debug('tg - success')
     else
       $logger.error('Telegram-cli error: ' + data.inspect)
-      # ВОЗВРАТ ССЫЛКИ В РЕДИС
+      # ВОЗВРАТ ССЫЛОК В РЕДИС
     end
   end
 end
@@ -77,7 +77,6 @@ EM.run do
   end
 
   telegram.connect do
-
     EM.add_periodic_timer(5) do
       $logger.debug('New Round')
 
