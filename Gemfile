@@ -6,4 +6,5 @@ source 'https://rubygems.org' do
   gem 'json'
   gem 'rake'
   gem 'telegram-rb', github: 'ssut/telegram-rb', require: 'telegram'
+  gem 'rubocop'
 end
