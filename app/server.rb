@@ -1,28 +1,30 @@
+# frozen_string_literal: true
+
 require 'redis'
 require 'sinatra'
 require 'sinatra/contrib'
 
-REDIS = Redis.new(host: "redis")
+REDIS = Redis.new(host: 'redis')
 
 set :bind, '0.0.0.0'
 
 route :get, :post, '/clearcache' do
   url = params['url']
-  if url and url != ""
+  if url and url != ''
     REDIS.rpush('all_urls', url)
-    json("response" => 1)
+    json('response' => 1)
   else
-    json("error" => {
-      "error_code" => 400,
-      "error_msg" => "URL parameter is empty"
+    json('error' => {
+      'error_code' => 400,
+      'error_msg' => 'URL parameter is empty'
     })
   end
 end
 
 not_found do
   status 404
-  json("error" => {
-    "error_code" => 404,
-    "error_msg" => "Something wrong! Try to type URL correctly"
+  json('error' => {
+    'error_code' => 404,
+    'error_msg' => 'Something wrong! Try to type URL correctly'
   })
 end
