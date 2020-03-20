@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'redis'
 require 'logger'
-require 'bundler' 
+require 'bundler'
 require 'net/http'
 
-REDIS = Redis.new(host: "redis")
+REDIS = Redis.new(host: 'redis')
 
 Bundler.require(:default)
 
@@ -24,7 +26,7 @@ end
 
 def vk(url)
   method_name = 'pages.clearCache'
-  access_token = ENV["VK_ACCESS_TOKEN"]
+  access_token = ENV['VK_ACCESS_TOKEN']
   v = '5.103'
 
   parameters = 'url=' + url
@@ -33,18 +35,18 @@ def vk(url)
   begin
     resp = Net::HTTP.get_response(URI.parse(api))
   rescue
-    $logger.error("GET-response error")
+    $logger.error('GET-response error')
     return
   end
 
   jresp = JSON.parse(resp.body)
-  
-  response = jresp["response"]
+
+  response = jresp['response']
 
   if response
     $logger.debug(response)
   else
-    $logger.error(jresp["error"]["error_msg"])
+    $logger.error(jresp['error']['error_msg'])
     # ВОЗВРАТ ССЫЛКИ В РЕДИС
   end
 end
@@ -58,11 +60,11 @@ def process_messages(telegram, urls)
 
   msg = urls.join(' ')
 
-  telegram.msg('Webpage_Bot', msg) do |success, data|
-    if data["result"] == "SUCCESS"
-      $logger.debug("tg - success")
+  telegram.msg('Webpage_Bot', msg) do |_success, data|
+    if data['result'] == 'SUCCESS'
+      $logger.debug('tg - success')
     else
-      $logger.error("Telegram-cli error: " + data.inspect)
+      $logger.error('Telegram-cli error: ' + data.inspect)
       # ВОЗВРАТ ССЫЛКИ В РЕДИС
     end
   end
@@ -76,18 +78,17 @@ EM.run do
 
   telegram.connect do
 
-    EventMachine::add_periodic_timer(5) do
-      $logger.debug("New Round")
+    EM.add_periodic_timer(5) do
+      $logger.debug('New Round')
 
       urls = get_urls()
 
       if urls.empty?
-        $logger.debug("No Urls")
+        $logger.debug('No Urls')
         next
       end
 
       process_messages(telegram, urls)
-      
     end
   end
 end
