@@ -1,7 +1,7 @@
 task :server do
-  ruby "app/server.rb"
+  ruby 'app/server.rb'
 end
 
 task :rloop do
-  ruby "app/rloop.rb"
+  ruby 'app/rloop.rb'
 end

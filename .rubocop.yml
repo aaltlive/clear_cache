@@ -1,0 +1,4 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - '_dev/**/*'
