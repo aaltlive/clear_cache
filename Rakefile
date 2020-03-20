@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task :server do
   ruby 'app/server.rb'
 end
