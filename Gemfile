@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org' do
-  gem 'redis'
-  gem 'sinatra'
-  gem 'sinatra-contrib'
-  gem 'thin'
   gem 'json'
   gem 'rake'
-  gem 'telegram-rb', github: 'ssut/telegram-rb', require: 'telegram'
+  gem 'redis'
   gem 'rubocop'
+  gem 'sinatra'
+  gem 'sinatra-contrib'
+  gem 'telegram-rb', github: 'ssut/telegram-rb', require: 'telegram'
+  gem 'thin'
 end
