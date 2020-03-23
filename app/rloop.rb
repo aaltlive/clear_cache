@@ -47,7 +47,6 @@ def vk(url)
     $logger.debug(response)
   else
     $logger.error(jresp['error']['error_msg'])
-    # ВОЗВРАТ ССЫЛКИ В РЕДИС
   end
 end
 
@@ -65,7 +64,6 @@ def process_messages(telegram, urls)
       $logger.debug('tg - success')
     else
       $logger.error('Telegram-cli error: ' + data.inspect)
-      # ВОЗВРАТ ССЫЛОК В РЕДИС
     end
   end
 end
