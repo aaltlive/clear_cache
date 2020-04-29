@@ -26,13 +26,13 @@ bin/telegram-cli -k tg-server.pub
 **Enter the number and received code and then for check type:**<br>
 ```
 contact_list
-exit
+quit
 ```
 ### Telegram-cli files
 ```
 cd .. && mkdir tg_rb
 mv tg/bin/telegram-cli tg_rb/telegram-cli && mv tg/tg-server.pub tg_rb/tg-server.pub
-mv ${HOME}/.telegram-cli ./telegram-cli && rm -rf tg/
+mv ${HOME}/.telegram-cli ./.telegram-cli && rm -rf tg/
 ```
 ### ENV
 ```
