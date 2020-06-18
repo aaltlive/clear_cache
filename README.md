@@ -1,38 +1,23 @@
-# clear_cache, 11.02.20
+# clear_cache, REMAKE 18.06.20
+
+Примечание: на данный момент версия не работает, рабочая версия с компиляцией вне контейнера на ветке V4.
+Цель этой версии - выполнять все действия внутри контейнера.
+
+## СОСТОЯНИЕ:
+18.06: удалось запустить tg-cli через tg-rb, после предварительной авторизации в режиме сессии.
+``` 
+docker build . -t cache
+docker run -it cache
+tg/bin/telegram-cli
+**авторизация**
+rake rloop
+**цикл успешно стартовал**
+!ОШИБКА: обращение к редис, а он в docker-compose, а не просто docker run. Так что теперь нужно пробовать тоже самое в docker-compose
+```
 
 ## SETUP
 ```
 git clone https://github.com/aaltlive/clear_cache.git && cd clear_cache
-```
-### Telegram-cli
-https://github.com/vysheng/tg
-
-#### Ubuntu
-```
-git clone --recursive https://github.com/vysheng/tg.git && cd tg
-sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson-dev libpython-dev make
-./configure
-make
-```
-**If get a compile error:** <br>
-https://github.com/wbeyda/tg/commit/4336ff8d04268dab7d0e6888e77bec54f9a16e18
-```
-sudo apt-get install libssl1.0-dev and zlib1g-dev
-```
-**After compile:** <br>
-```
-bin/telegram-cli -k tg-server.pub
-```
-**Enter the number and received code and then for check type:**<br>
-```
-contact_list
-quit
-```
-### Telegram-cli files
-```
-cd .. && mkdir tg_rb
-mv tg/bin/telegram-cli tg_rb/telegram-cli && mv tg/tg-server.pub tg_rb/tg-server.pub
-mv ${HOME}/.telegram-cli ./.telegram-cli && rm -rf tg/
 ```
 ### ENV
 ```
@@ -41,7 +26,6 @@ touch tokens.env
 ```
 VK_ACCESS_TOKEN=<your_vk_access_token>
 ```
-
 ## Run docker
 ```
 docker-compose build && docker-compose up
