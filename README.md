@@ -17,7 +17,7 @@ rake rloop
 
 ## SETUP
 ```
-git clone https://github.com/aaltlive/clear_cache.git && cd clear_cache
+git clone https://github.com/Aaltdes/clear_cache.git && cd clear_cache
 ```
 ### ENV
 ```
