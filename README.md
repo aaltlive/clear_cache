@@ -2,7 +2,7 @@
 
 ## SETUP
 ```
-git clone https://github.com/aaltlive/clear_cache.git && cd clear_cache
+git clone https://github.com/Aaltdes/clear_cache.git && cd clear_cache
 ```
 ### Telegram-cli
 https://github.com/vysheng/tg
@@ -46,3 +46,5 @@ VK_ACCESS_TOKEN=<your_vk_access_token>
 ```
 docker-compose build && docker-compose up
 ```
+
+# Альтернативная версия находится на ветке new_v1.
